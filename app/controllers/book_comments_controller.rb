@@ -5,7 +5,7 @@ def create
         comment.book_id = book.id
         comment.save
         redirect_back(fallback_location: root_path)
-    end
+end
     
     def destroy
         BookComment.find(params[:id]).destroy
@@ -18,3 +18,4 @@ private
     end
 
 end
+
