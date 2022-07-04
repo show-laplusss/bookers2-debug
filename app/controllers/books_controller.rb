@@ -4,12 +4,15 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     @books = Book.new
+    @book_comment = BookComment.new
   end
 
   def index
     @book = Book.new
     @books = Book.all
+    @bookfav = Book.ids
     @user = current_user
+    
   end
 
   def create
@@ -29,9 +32,9 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
      if @book.user_id == current_user.id
       render "edit"
-    else
+     else
       redirect_to books_path
-    end
+     end
   end
 
   def update
