@@ -1,0 +1,18 @@
+<h2>Books search for"<%= word %>"</h2>
+<table class="table table-hover table-inverse">
+    <% if @range == "User" %>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <tb><%= user.name %></tb>
+                </tr>
+            <% end %>
+        </tbody>
+    <% else %>
+        <tbody>
+                <tr>
+                    <tb><%= book.title %></tb>
+                </tr>
+        </tbody>
+    <% end %>
+</table>
